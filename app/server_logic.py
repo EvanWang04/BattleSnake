@@ -139,7 +139,7 @@ def simulate_future(possible_moves, data):
       shouldBreak = False
       for asdf in range(len(data["board"]["snakes"])):
         
-        if (data["you"]["id"] == data["board"]["snakes"][snakeIndex]["id"] and turnIndex == 0):
+        if (data["board"]["snakes"][snakeIndex]["name"] == "snek" and turnIndex == 0):
           move = myMove
         else:
           move = simulate_move(dataHolder["board"]["snakes"][snakeIndex]["head"], dataHolder["board"]["snakes"][snakeIndex]["body"], dataHolder["board"]["snakes"], dataHolder["board"]["food"], dataHolder["board"]["snakes"][snakeIndex]["length"])
