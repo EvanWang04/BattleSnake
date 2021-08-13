@@ -150,6 +150,10 @@ def simulate_future(possible_moves, data):
             not_possible_moves.append([myMove, turnIndex])
             shouldBreak = True
             break
+          if shouldBreak:
+            break
+        if shouldBreak:
+          break
             
           del data["board"]["snakes"][snakeIndex]
           snakeIndex -= 1
@@ -167,6 +171,7 @@ def simulate_future(possible_moves, data):
         elif move == "left":
           data["board"]["snakes"][snakeIndex]["head"]["x"] -= 1
         
+        print(len(data["board"]["snakes"][snakeIndex]["body"]))
         for bodyIndex in range(len(data["board"]["snakes"][snakeIndex]["body"])-1, 0, -1):
           data["board"]["snakes"][snakeIndex]["body"][bodyIndex] = data["board"]["snakes"][snakeIndex]["body"][bodyIndex-1].copy()
         
