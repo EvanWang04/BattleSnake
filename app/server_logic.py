@@ -133,7 +133,7 @@ def simulate_future(possible_moves, data):
   dataOrigin = copy.deepcopy(data)
   for myMove in ((possible_moves)):
     data = copy.deepcopy(dataOrigin)
-    for turnIndex in range(10): # num turns ahead
+    for turnIndex in range(6): # num turns ahead
       snakeIndex = 0
       dataHolder = copy.deepcopy(data)
       shouldBreak = False
