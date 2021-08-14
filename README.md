@@ -3,4 +3,5 @@
 ## Technologies Used
 
 * [Python3](https://www.python.org/)
+* [Flask](https://flask.palletsprojects.com/)
 * [Heroku](https://www.heroku.com/)
