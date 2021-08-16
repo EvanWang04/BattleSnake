@@ -4,7 +4,7 @@
 
 * Utilize the Battlesnake API to gather data regarding board dimensions, enemy snakes, and food locations to compute appropriate moves for the snake
 * Implement a recursive algorithm on enemy snakes to predict their moves and adjust the snake's actions accordingly
-* Deploy on Heroku to reduce latency by 77% from ~300ms to 70ms
+* Deployed on Heroku to reduce latency by 77% from ~300ms to 70ms
 
 ## Technologies Used
 
