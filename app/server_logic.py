@@ -139,14 +139,14 @@ def simulate_future(possible_moves, data):
       shouldBreak = False
       for asdf in range(len(data["board"]["snakes"])):
         
-        if (data["board"]["snakes"][snakeIndex]["name"] == "you" and turnIndex == 0):
+        if (data["board"]["snakes"][snakeIndex]["id"] == data["you"]["id"] and turnIndex == 0):
           move = myMove
         else:
           move = simulate_move(dataHolder["board"]["snakes"][snakeIndex]["head"], dataHolder["board"]["snakes"][snakeIndex]["body"], dataHolder["board"]["snakes"], dataHolder["board"]["food"], dataHolder["board"]["snakes"][snakeIndex]["length"])
 
         #print(move, data["turn"])
         if move == "dead":
-          if data["board"]["snakes"][snakeIndex]["name"] == "you":
+          if data["board"]["snakes"][snakeIndex]["id"] == data["you"]["id"]:
             not_possible_moves.append([myMove, turnIndex])
             shouldBreak = True
             break
@@ -167,6 +167,8 @@ def simulate_future(possible_moves, data):
         elif move == "left":
           data["board"]["snakes"][snakeIndex]["head"]["x"] -= 1
         
+        # print(data["board"]["snakes"])
+        # print(data["board"]["snakes"], shouldBreak)
         for bodyIndex in range(len(data["board"]["snakes"][snakeIndex]["body"])-1, 0, -1):
           data["board"]["snakes"][snakeIndex]["body"][bodyIndex] = data["board"]["snakes"][snakeIndex]["body"][bodyIndex-1].copy()
         
@@ -189,7 +191,7 @@ def simulate_future(possible_moves, data):
         # print(data["board"]["snakes"][0]["body"], data["turn"])
 
   
-  print(possible_moves, not_possible_moves, data["turn"])
+  # print(possible_moves, not_possible_moves, data["turn"])
   for i in range(len(not_possible_moves)):
     possible_moves.remove(not_possible_moves[i][0])
   
