@@ -13,7 +13,7 @@ def handle_info():
     return {
         "apiversion": "1",
         "author": "Snakes N' Lads", 
-        "color": "#000000",
+        "color": "#953553",
         "head": "bonhomme",  
         "tail": "bolt",
     }
